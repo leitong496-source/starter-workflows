@@ -1,7 +1,7 @@
 - name: Deploy via rsync
   uses: burnett01/rsync-deployments@5.2
   with:
-    switches: -avzr --delete
+    switches: -avzr --delete --exclude-from=.gitignore
     path: ./
     remote_path: /var/www/test-deploy/
     remote_host: ${{ secrets.HOST }}
